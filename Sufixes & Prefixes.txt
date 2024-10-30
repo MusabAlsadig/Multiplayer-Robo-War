@@ -1,0 +1,5 @@
+MethodName_ServerRpc() => parameters will be send to the server so the method work there
+
+MethodName_ClientRpc() => parameter will be send to all clients so the method work there
+
+Server_MethodName() => method that called from Server already

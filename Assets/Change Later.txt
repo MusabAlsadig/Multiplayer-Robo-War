@@ -1,0 +1,5 @@
+Debug.LogWarning("Need review here");
+Debug.Log("need some change, this suppose to happen directly after players connect");
+// TODO
+// additional check
+NetworkDiscoveryManager.cs

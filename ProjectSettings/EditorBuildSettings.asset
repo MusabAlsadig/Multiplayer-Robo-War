@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/1_MainMenu.unity
+    guid: a9ca168ffe9aff7488cfdab2248f52cb
+  - enabled: 1
+    path: Assets/Scenes/2_Prematch.unity
+    guid: ffd5aca0a4c0d1043802e4faf225f024
+  - enabled: 1
+    path: Assets/Scenes/Level 1_ Free Space.unity
+    guid: 9e765f5a9c8247549bf4a9edfe730803
+  - enabled: 0
+    path: Assets/Scenes/Level 2_ Place Changer.unity
+    guid: 8827ea6288d8f0046bf2c52fea7eb981
+  - enabled: 1
+    path: Assets/Scenes/Level 5_Normal ground.unity
+    guid: 58e798a0a2d39b54bb14b6bad3a0d6da
+  - enabled: 0
+    path: Assets/Lobby & Relay Test.unity
+    guid: b4f85d2a72973934f8598bc59ee26e27
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 34de75a6cdb680f41a1b4d91e0b1d97a,
+      type: 2}
