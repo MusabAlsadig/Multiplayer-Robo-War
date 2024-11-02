@@ -20,7 +20,6 @@ public static class EventManager
     private static Dictionary<Rebindable, InputAction> rebindableInputs = new Dictionary<Rebindable, InputAction>();
     private static InputControls controls;
 
-    //private static CustomSettings.InputSettings settings;
 
     public static void Setup(InputControls _controls)
     {
@@ -39,43 +38,6 @@ public static class EventManager
         ClickStartedActions[Controls.Thruster] = () => { };
         ClickCancledActions[Controls.Thruster] = () => { };
     }
-
-
-    #region Variables
-    // for some reason the dictionary of actions didn't work without those
-    //
-    private static Action Action1;
-    private static Action Action2;
-    private static Action Chat;
-    private static Action Emote;
-    private static Action Exit;
-    private static Action Confirm;
-    private static Action FullScreen;
-    private static Action Interact;
-    private static Action Inventor;
-    private static Action Pickup;
-    private static Action Run;
-    private static Action ScreenShot;
-    private static Action TextBox;
-    private static Action ZoomIn;
-    private static Action ZoomOut;
-
-    private static Action importantAction1;
-    private static Action importantAction2;
-    private static Action importantChat;
-    private static Action importantEmote;
-    private static Action importantExit;
-    private static Action importantConfirm;
-    private static Action importantFullScreen;
-    private static Action importantInteract;
-    private static Action importantInventor;
-    private static Action importantPickup;
-    private static Action importantRun;
-    private static Action importantScreenShot;
-    private static Action importantTextBox;
-    private static Action importantZoomIn;
-    private static Action importantZoomOut;
-    #endregion
 
     #region Input Events
 
@@ -171,7 +133,7 @@ public static class EventManager
     /// </summary>
     /// <param name="controls"></param>
     /// <param name="method"></param>
-    /// <param name="isImportant">shold this method ingore all not important ones after it?</param>
+    /// <param name="isImportant">should this method ignore all not important ones after it?</param>
     public static void Assign(Controls controls, Action method)
     {
         if (!Actions.ContainsKey(controls))
@@ -202,7 +164,7 @@ public static class EventManager
     /// </summary>
     /// <param name="controls"></param>
     /// <param name="method"></param>
-    /// <param name="isImportant">shold this method ingore all not important ones after it?</param>
+    /// <param name="isImportant">should this method ignore all not important ones after it?</param>
     public static void AssignImportant(Controls controls, Action method)
     {
         if (!ImportantActions.ContainsKey(controls))
@@ -267,11 +229,7 @@ public static class EventManager
     #region Rebinding methods
 
     public enum Rebindable 
-    {
-        Action1, Action2, Inventory, Exit, TextBox, Emote,
-        Run, Move_up, Move_down, Move_left, Move_right,
-        ScreenShot, FullScreen, ZoomIn, ZoomOut,
-        Interact, Pickup }
+    { Fire, Reload, Thruster }
 
     /// <summary>
     /// change the key that used to activate this type of methods

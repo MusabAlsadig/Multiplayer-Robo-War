@@ -19,7 +19,7 @@ public class PlayerInput : MonoBehaviour
 
     public static event Action OnScrollDelta;
 
-#if PLATFORM_STANDALONE_WIN
+#if PLATFORM_STANDALONE_WIN || UNITY_EDITOR
     public static bool IsOnSmartPhone { get; private set; } = false;
 #else
     public static bool IsOnSmartPhone { get; private set; } = true;
