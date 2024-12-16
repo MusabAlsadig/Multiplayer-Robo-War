@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1612768576
+  GlobalObjectIdHash: 1152281121
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -422,6 +422,13 @@ MonoBehaviour:
   rotLimit: 45
   animator: {fileID: 2900694004536264283}
   cam: {fileID: 2900694004836539158}
+  _aimAssistStrength:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _maxAngle: 30
 --- !u!114 &2900694006032577494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1871,6 +1878,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876869843340122269, guid: fd945b6fc8fbdca44a137853938f894e,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1152281121
       objectReference: {fileID: 0}
     - target: {fileID: 8093060569382810280, guid: fd945b6fc8fbdca44a137853938f894e,
         type: 3}

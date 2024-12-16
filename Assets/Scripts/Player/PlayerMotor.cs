@@ -29,11 +29,12 @@ public class PlayerMotor : MonoBehaviour
     private float mouse_X, mouse_Y;
 
     private Rigidbody rb;
+    private AimAssist aimAssist;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-
+        aimAssist = GetComponent<AimAssist>();
     }
 
     private void OnEnable()
@@ -90,13 +91,60 @@ public class PlayerMotor : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(playerEuler);
         transform.rotation = rotation;
 
-        //============== For cam
 
+        //============== For cam
+        
         camEuler += new Vector3(-mouse_Y * _finalRotationSpeed / 2, 0, 0); // (-) is for the invert
         camEuler.x = Mathf.Clamp(camEuler.x, -rotLimit, rotLimit);
 
         Quaternion cam_rotation = Quaternion.Euler(camEuler);
         cam.localRotation = cam_rotation;
+
+
+        // do some aim assist
+
+        if (aimAssist == null)
+            return;
+
+        // camera.forward is the direction the player will shoot at
+
+        Vector3 aim = cam.forward;
+        Vector3 assistedAim = aimAssist.GetAssistedAim(aim);
+
+        transform.forward = new Vector3(aim.x, 0, aim.z);
+        cam.transform.forward = assistedAim;
     }
+
+
+        [Tooltip("Assist strength decay as angle to closest target increases")]
+        [SerializeField] private AnimationCurve _aimAssistStrength;
+        [Tooltip("Max angle for which aim is assisted. Beyond this value there is no assist")]
+        [SerializeField][Range(0f, 90f)] private float _maxAngle = 30f;
+
+        public Vector3 GetAssistedAim(Vector3 aim, ref List<Transform> targets)
+        {
+            // if no targets then return aim un-changed
+            if (targets.Count == 0) return aim;
+            // identify the closest target in angle
+            float minAngle = 180f;
+            Vector3 desiredDirection = aim;
+            foreach (Transform target in targets)
+            {
+                Vector3 directionToTarget = target.position - transform.position;
+                directionToTarget.y = 0f;
+                directionToTarget.Normalize();
+                float angle = Vector3.Angle(aim, directionToTarget);
+                if (angle < minAngle)
+                {
+                    minAngle = angle;
+                    desiredDirection = directionToTarget;
+                }
+            }
+            if (minAngle > _maxAngle) return aim;
+            // return the assisted aim-direction based on the proximity to the target
+            float assistStrength = _aimAssistStrength.Evaluate(minAngle / _maxAngle);
+            return Vector3.Slerp(aim, desiredDirection, assistStrength);
+        }
+    
 
 }

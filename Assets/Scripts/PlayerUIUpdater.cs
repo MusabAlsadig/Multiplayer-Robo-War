@@ -9,8 +9,8 @@ namespace UI
     public class PlayerUIUpdater : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] private Transform hp_fill;
-        [SerializeField] private Transform energy_fill;
+        [SerializeField] private Image hp_fill;
+        [SerializeField] private Image energy_fill;
         [SerializeField] private Image crosshair;
         [SerializeField] private HitIndicator hitIndicator;
         [SerializeField] private TextMeshProUGUI respawning_Text;
@@ -49,16 +49,12 @@ namespace UI
 
         public void UpdateHp(float amount)
         {
-            Vector3 currentScale = hp_fill.localScale;
-            currentScale.x = amount;
-            hp_fill.localScale = currentScale;
+            hp_fill.fillAmount = amount;
         }
 
         public void UpdateEnergy(float amount)
         {
-            Vector3 currentScale = energy_fill.localScale;
-            currentScale.x = amount;
-            energy_fill.localScale = currentScale;
+            energy_fill.fillAmount = amount;
         }
 
         public void UpdateCrosshair(AllyOrEnemy allyOrEnemy)
