@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Default Team Colors
   m_EditorClassIdentifier: 
   solo: {r: 0, g: 0, b: 0, a: 0}
-  yellow: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  red: {r: 1, g: 0, b: 0, a: 1}
-  blue: {r: 0, g: 0, b: 1, a: 1}
-  green: {r: 0, g: 1, b: 0, a: 1}
+  yellow: {r: 1, g: 0.92156863, b: 0.015686275, a: 0.39215687}
+  red: {r: 1, g: 0, b: 0, a: 0.39215687}
+  blue: {r: 0, g: 0, b: 1, a: 0.39215687}
+  green: {r: 0, g: 1, b: 0, a: 0.39215687}
