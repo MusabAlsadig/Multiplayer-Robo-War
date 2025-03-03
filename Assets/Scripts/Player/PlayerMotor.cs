@@ -13,8 +13,6 @@ public class PlayerMotor : MonoBehaviour
 
     [SerializeField] private float rotLimit = 45;
 
-
-    [SerializeField] private Animator animator;
     [SerializeField] private Transform cam;
 
     private Vector3 movement;
@@ -56,8 +54,6 @@ public class PlayerMotor : MonoBehaviour
 
     private void FixedUpdate()
     {
-        animator.SetFloat("movement", v);
-
         if (movement != Vector3.zero)
             PreformMovement();
 
