@@ -13,15 +13,10 @@ public class PlayerSetup : NetworkBehaviour
     [Header("Player Info")]
     [SerializeField] private PlayerInfoManager playerInfoManager;
 
-    [Space]
-    [SerializeField] private MeshRenderer eye;
 
     [Space]
-    [SerializeField] private GameObject modelHead;
-    [SerializeField] private GameObject modelBody;
+    [SerializeField] private GameObject model;
 
-    [Header("UI")]
-    [SerializeField] private GameObject canvas;
 
     public string ally, enemy;
 
@@ -32,10 +27,6 @@ public class PlayerSetup : NetworkBehaviour
     private void Awake()
     {
         MatchManagerBase.OnMatchStarted += MatchManagerBase_OnMatchStarted;
-
-        
-        
-        eye.material = new Material(eye.material);
     }
 
     
@@ -43,9 +34,7 @@ public class PlayerSetup : NetworkBehaviour
     {
         if (IsOwner)
         {
-            modelHead.layer = LayerMask.NameToLayer(hiddenLayerName);
-            modelBody.layer = LayerMask.NameToLayer(hiddenLayerName);
-            eye.gameObject.layer = LayerMask.NameToLayer(hiddenLayerName);
+            model.layer = LayerMask.NameToLayer(hiddenLayerName);
         }
         else
         {
@@ -72,8 +61,6 @@ public class PlayerSetup : NetworkBehaviour
         {
             b.enabled = false;
         }
-        Destroy(canvas);
-        
     }
 
     

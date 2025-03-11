@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Current Match Settengs Holder
   m_EditorClassIdentifier: 
   settings:
-    mapIndex: 0
+    mapIndex: 2
     mode: 0
     maxScore: 10
     minutes: 5

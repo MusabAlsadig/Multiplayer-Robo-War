@@ -11,7 +11,7 @@ public class Shoot : NetworkBehaviour
 
     [SerializeField] private KeyCode fire = KeyCode.M, reload = KeyCode.R;
 
-    [SerializeField] private HealthSystem healthSystem;
+    private HealthSystem healthSystem;
 
     private bool isReloading;
     private float reloadingTime;
@@ -135,7 +135,7 @@ public class Shoot : NetworkBehaviour
 
     private void Local_Fire()
     {
-        gun.bulletParticleSystem.Emit(1);
+        gun.EmitParticle();
 
         if (!RayCast(out RaycastHit hit))
             return;
@@ -157,7 +157,7 @@ public class Shoot : NetworkBehaviour
         if (IsOwner)
             return;
 
-        gun.bulletParticleSystem.Emit(1);
+        gun.EmitParticle();
     }
 
     private void Local_CheckSight()

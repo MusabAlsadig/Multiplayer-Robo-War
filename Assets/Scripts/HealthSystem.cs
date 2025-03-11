@@ -14,7 +14,7 @@ public class HealthSystem : NetworkBehaviour
     
 
 
-    [Header("References")]
+    [Header("References"), Tooltip ("Optional")]
     public Transform textSpawningPlace;
     [SerializeField] private new Collider collider;
 

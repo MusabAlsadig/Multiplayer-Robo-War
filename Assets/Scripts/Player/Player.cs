@@ -1,16 +1,11 @@
 ﻿using UnityEngine;
 using Unity.Netcode;
-using System;
-using Unity.Collections;
 using UI;
-using UnityEditor.Experimental;
 using System.Collections.Generic;
 
 [RequireComponent(typeof(HealthSystem))]
 public class Player : NetworkBehaviour
 {
-    public Transform flagHolder;
-
     public static List<Player> AllPlayers = new List<Player>();
 
     [Header("Components")]
@@ -109,8 +104,6 @@ public class Player : NetworkBehaviour
 
         PlayerUIUpdater.Instance.StartRespawningTimer();
 
-        if (flagHolder != null)
-            flagHolder.GetComponentInChildren<Flag>().Server_Detach();
 
 
         DisableComponents();

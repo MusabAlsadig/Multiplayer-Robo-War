@@ -13,7 +13,8 @@ public abstract class GunBase : NetworkBehaviour
     [Header("Proprties as gun")]
     [SerializeField] protected Bullet bullet;
     [SerializeField] private int inaccuracyDegrees = 3;
-    public ParticleSystem bulletParticleSystem;
+    [SerializeField]
+    private ParticleSystem[] bulletParticleSystems;
     public int Range => bullet.maxDistance;
 
     [Header("Ammo")]
@@ -32,7 +33,6 @@ public abstract class GunBase : NetworkBehaviour
     public bool CanReload => Ammo != clipSize && StoredAmmo > 0;
 
     [SerializeField] private Transform firePlace;
-    [SerializeField] protected ParticleSystem shoootParticle;
     [SerializeField] private GameObject hitParticle;
 
     public GameObject HitParticle => hitParticle;
@@ -84,6 +84,13 @@ public abstract class GunBase : NetworkBehaviour
     
     public abstract void StopShooting();
 
+    public void EmitParticle()
+    {
+        foreach (var particleSystem in bulletParticleSystems)
+        {
+            particleSystem.Emit(1);
+        }
+    }
 
     protected void Fire()
     {

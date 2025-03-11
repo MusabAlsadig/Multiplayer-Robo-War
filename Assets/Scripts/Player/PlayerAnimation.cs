@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -11,6 +9,9 @@ public class PlayerAnimation : NetworkBehaviour
 
     private const string ExplodString = "exploded";
     private const string DeathString = "isDead";
+
+    [Header("Prefabs"), SerializeField]
+    private GameObject explotionVFX;
 
     private void Awake()
     {
@@ -37,6 +38,7 @@ public class PlayerAnimation : NetworkBehaviour
     public void Owner_Explode()
     {
         animator.SetBool(ExplodString, true);
+        SpawnExplotion_ServerRpc();
     }
 
     public void Owner_Revive()
@@ -45,5 +47,17 @@ public class PlayerAnimation : NetworkBehaviour
         animator.SetBool(ExplodString, false);
     }
 
+
+    [ServerRpc]
+    private void SpawnExplotion_ServerRpc()
+    {
+        SpawnExplotion_ClientRpc();
+    }
+
+    [ClientRpc]
+    private void SpawnExplotion_ClientRpc()
+    {
+        Instantiate(explotionVFX);
+    }
 
 }
