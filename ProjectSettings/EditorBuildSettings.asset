@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 1_ Free Space.unity
     guid: 9e765f5a9c8247549bf4a9edfe730803
+  - enabled: 1
+    path: Assets/Scenes/Level 2.unity
+    guid: c2787a1784f148e41a9119f9c81134a3
   - enabled: 0
     path: Assets/Scenes/Old/Level 2_ Place Changer.unity
     guid: 8827ea6288d8f0046bf2c52fea7eb981

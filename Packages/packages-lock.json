@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.github.superunitybuild.buildtool": {
+      "version": "https://github.com/superunitybuild/buildtool.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "3b5cc7f7139f9f200f6371507e4b67bd925d102e"
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,

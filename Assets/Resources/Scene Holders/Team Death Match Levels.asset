@@ -14,11 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - name: Level 1_ Free Space
+    texture: {fileID: 2800000, guid: a97fb431b3940054c8ab9380f3d0fcb9, type: 3}
+    actualName: Prototype 1
+  - name: Level 5_Normal ground
+    texture: {fileID: 2800000, guid: 66515a8a0f9574e4cacd9d477466fe9f, type: 3}
+    actualName: Prototype 2
+  - name: Level 2
     texture: {fileID: 2800000, guid: 5cee66cac6a0e9f4c8bca046bdd007eb, type: 3}
     actualName: Track 1
-  - name: Level 5_Normal ground
-    texture: {fileID: 2800000, guid: f4b02bf975832af47ace37ca66f4cea8, type: 3}
-    actualName: Track 2
   - name: new level 2
     texture: {fileID: 2800000, guid: d861095609793e74498c702b9bb8441e, type: 3}
-    actualName: Track 3
+    actualName: Track 2

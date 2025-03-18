@@ -37,7 +37,8 @@ public class Fuel : NetworkBehaviour
     float positionSpring;
 
     [Space]
-    [SerializeField] ParticleSystem burner_R, burner_L;
+    [SerializeField]
+    private ParticleSystem[] burners;
 
     
 
@@ -144,13 +145,17 @@ public class Fuel : NetworkBehaviour
     {
         if (value)
         {
-            burner_R.Play(true);
-            burner_L.Play(true);
+            foreach (var particleSystem in burners)
+            {
+                particleSystem.Play(true);
+            }
         }
         else
         {
-            burner_R.Stop(true);
-            burner_L.Stop(true);
+            foreach (var particleSystem in burners)
+            {
+                particleSystem.Stop(true);
+            }
         }
     }
 }

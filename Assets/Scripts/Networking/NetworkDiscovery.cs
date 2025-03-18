@@ -15,16 +15,17 @@ public abstract class NetworkDiscovery : MonoBehaviour
 
     private readonly IPEndPoint broadcast_Address = new IPEndPoint(IPAddress.Broadcast, DEFAULT_PORT);
 
+    protected readonly Queue<byte[]> buffer = new Queue<byte[]>();
     protected UdpClient udpClient;
     private byte[] broadcastData;
-
-    protected readonly Queue<byte[]> buffer = new Queue<byte[]>();
 
 
     protected void Awake()
     {
         udpClient = new UdpClient(DEFAULT_PORT);
     }
+
+
 
     private void Update()
     {
@@ -34,6 +35,11 @@ public abstract class NetworkDiscovery : MonoBehaviour
             string value = ByteToString(data);
             OnReceivedBroadcast(LanConnectionInfo.FromString(value));
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        udpClient.Dispose();
     }
 
     protected bool StartBroadcasting(LanConnectionInfo lanConnectionInfo)

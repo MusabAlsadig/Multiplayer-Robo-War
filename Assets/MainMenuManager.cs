@@ -10,11 +10,13 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject lanPanel;
     [SerializeField] private GameObject onlinePanel;
+    [SerializeField] private GameObject localPanel;
     [SerializeField] private GameObject settingsPanel;
 
     [Header("Buttons")]
     [SerializeField] private Button lanButton;
     [SerializeField] private Button onlineButton;
+    [SerializeField] private Button localButton;
     [SerializeField] private Button settingsButton;
     [SerializeField] private List<Button> crossButtons = new List<Button>();
 
@@ -28,10 +30,12 @@ public class MainMenuManager : MonoBehaviour
         panels[Type.MainMenu] = mainMenuPanel;
         panels[Type.Lan] = lanPanel;
         panels[Type.Online] = onlinePanel;
+        panels[Type.Local] = localPanel;
         panels[Type.Settings] = settingsPanel;
 
         lanButton.onClick.AddListener(() => OpenPanel(Type.Lan));
         onlineButton.onClick.AddListener(() => OpenPanel(Type.Online));
+        localButton.onClick.AddListener(() => OpenPanel(Type.Local));
         settingsButton.onClick.AddListener(() => OpenPanel(Type.Settings));
         crossButtons.ForEach(button => button.onClick.AddListener(ReturnToMain));
     }
@@ -44,7 +48,7 @@ public class MainMenuManager : MonoBehaviour
         print("opening main menu by default is disabled if player have no data");
     }
 
-    private enum Type { MainMenu, Lan, Online, Settings }
+    private enum Type { MainMenu, Lan, Online, Local, Settings }
 
     private void OpenDefault()
     {
