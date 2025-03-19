@@ -15,6 +15,8 @@ public abstract class GunBase : NetworkBehaviour
     [SerializeField] private int inaccuracyDegrees = 3;
     [SerializeField]
     private ParticleSystem[] bulletParticleSystems;
+    [SerializeField]
+    private SimpleSoundPlayer sound;
     public int Range => bullet.maxDistance;
 
     [Header("Ammo")]
@@ -84,11 +86,12 @@ public abstract class GunBase : NetworkBehaviour
     
     public abstract void StopShooting();
 
-    public void EmitParticle()
+    public void EmitParticleAndSound()
     {
         foreach (var particleSystem in bulletParticleSystems)
         {
             particleSystem.Emit(1);
+            sound.Play();
         }
     }
 

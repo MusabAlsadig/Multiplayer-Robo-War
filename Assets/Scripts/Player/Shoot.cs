@@ -135,7 +135,7 @@ public class Shoot : NetworkBehaviour
 
     private void Local_Fire()
     {
-        gun.EmitParticle();
+        gun.EmitParticleAndSound();
 
         if (!RayCast(out RaycastHit hit))
             return;
@@ -157,7 +157,7 @@ public class Shoot : NetworkBehaviour
         if (IsOwner)
             return;
 
-        gun.EmitParticle();
+        gun.EmitParticleAndSound();
     }
 
     private void Local_CheckSight()
