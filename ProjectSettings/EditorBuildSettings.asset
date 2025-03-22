@@ -23,9 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 5_Normal ground.unity
     guid: 58e798a0a2d39b54bb14b6bad3a0d6da
-  - enabled: 1
-    path: Assets/Scenes/new level 2.unity
-    guid: d05b81ec7b28ec2449d30daf4a9780e7
   - enabled: 0
     path: Assets/Lobby & Relay Test.unity
     guid: b4f85d2a72973934f8598bc59ee26e27

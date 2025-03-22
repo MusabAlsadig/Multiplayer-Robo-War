@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 11400004}
   - component: {fileID: 9500000}
   - component: {fileID: 5039985321318194090}
+  - component: {fileID: 6675426466157715133}
   m_Layer: 5
   m_Name: SF Button
   m_TagString: Untagged
@@ -282,6 +283,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 11400000}
+--- !u!114 &6675426466157715133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb8ac929fb51dc4fbe15802e1498a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundType: 0
 --- !u!1 &1553546601629919967
 GameObject:
   m_ObjectHideFlags: 0

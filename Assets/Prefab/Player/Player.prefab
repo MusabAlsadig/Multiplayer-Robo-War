@@ -374,7 +374,7 @@ Transform:
   m_GameObject: {fileID: 3600015814639681396}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3966,19 +3966,19 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
-    multiplyColliderForceByCollisionAngle: 1
+    multiplyColliderForceByCollisionAngle: 0
     m_Planes: []
     m_Dampen:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4031,7 +4031,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4084,7 +4084,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.99
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4136,7 +4136,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minKillSpeed: 0
     maxKillSpeed: 10000
-    radiusScale: 1
+    radiusScale: 0.01
     collidesWith:
       serializedVersion: 2
       m_Bits: 4294967295
@@ -5290,7 +5290,8 @@ AudioSource:
   m_GameObject: {fileID: 6175461737646130666}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0865262eed412294492f63739c72d616,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 025aa80ce83394dbb984ac462d965da6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.079
@@ -9267,19 +9268,19 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
-    multiplyColliderForceByCollisionAngle: 1
+    multiplyColliderForceByCollisionAngle: 0
     m_Planes: []
     m_Dampen:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -9332,7 +9333,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9385,7 +9386,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.99
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -9437,7 +9438,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minKillSpeed: 0
     maxKillSpeed: 10000
-    radiusScale: 1
+    radiusScale: 0.01
     collidesWith:
       serializedVersion: 2
       m_Bits: 4294967295
@@ -10661,7 +10662,7 @@ MonoBehaviour:
   - {fileID: 4138574320397412050}
   - {fileID: 6365680115948354680}
   playerInfoManager: {fileID: 7121809980446476359}
-  model: {fileID: 0}
+  model: {fileID: 8242730930540214579}
   ally: Ally
   enemy: Enemy
   remoteLayerName: Remote Player
@@ -11056,17 +11057,17 @@ PrefabInstance:
     - target: {fileID: -8098176227723436189, guid: b3d7cbe7faca3634f80937c7cde13e62,
         type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4015907566807384577, guid: b3d7cbe7faca3634f80937c7cde13e62,
         type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3661985432938654458, guid: b3d7cbe7faca3634f80937c7cde13e62,
         type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2079347233687549623, guid: b3d7cbe7faca3634f80937c7cde13e62,
         type: 3}
@@ -11076,7 +11077,7 @@ PrefabInstance:
     - target: {fileID: -1018664272722485354, guid: b3d7cbe7faca3634f80937c7cde13e62,
         type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 190812766479205375, guid: b3d7cbe7faca3634f80937c7cde13e62,
         type: 3}
@@ -11091,7 +11092,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b3d7cbe7faca3634f80937c7cde13e62,
         type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b3d7cbe7faca3634f80937c7cde13e62,
         type: 3}
@@ -11108,6 +11109,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d7cbe7faca3634f80937c7cde13e62, type: 3}
+--- !u!1 &8242730930540214579 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b3d7cbe7faca3634f80937c7cde13e62,
+    type: 3}
+  m_PrefabInstance: {fileID: 9125834145102316642}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8732410067313828745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b3d7cbe7faca3634f80937c7cde13e62,

@@ -141,7 +141,7 @@ public class Shoot : NetworkBehaviour
             return;
 
 
-        Instantiate(gun.HitParticle, hit.point, Quaternion.Euler(hit.normal), hit.transform);
+        Instantiate(gun.HitParticle, hit.point, Quaternion.Euler(hit.normal), null);
     }
 
     [ClientRpc]

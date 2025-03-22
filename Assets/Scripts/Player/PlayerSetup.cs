@@ -35,6 +35,10 @@ public class PlayerSetup : NetworkBehaviour
         if (IsOwner)
         {
             model.layer = LayerMask.NameToLayer(hiddenLayerName);
+            foreach(Transform child in model.transform)
+            {
+                child.gameObject.layer = LayerMask.NameToLayer(hiddenLayerName);
+            }
         }
         else
         {

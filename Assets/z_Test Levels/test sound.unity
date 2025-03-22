@@ -344,7 +344,15 @@ MonoBehaviour:
     m_Id: e1bac3f6-5eec-40d4-a5cb-9fe9f0b5f2f6
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 7c58b939-e7c7-4bd9-b486-9a07f2ffaff4
+      m_Path: <Mouse>/delta
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Mouse Delta_Action
+      m_Flags: 0
     m_Flags: 0
   movement: {x: 0, y: 0}
   mousePos: {x: 0, y: 0}
@@ -534,7 +542,8 @@ AudioSource:
   m_GameObject: {fileID: 1684279892}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0865262eed412294492f63739c72d616,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 025aa80ce83394dbb984ac462d965da6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.079
