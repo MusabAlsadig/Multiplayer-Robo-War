@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerInfoManager : MonoBehaviour
 {
 
     [SerializeField] private Transform info_hp_fill;
-    [SerializeField] private TextMesh txt;
+    [SerializeField] private TextMeshPro txt;
     [Space]
     [SerializeField] private AllyOrEnemyColors colors;
 

@@ -57,7 +57,7 @@ public class PlayerAnimation : NetworkBehaviour
     [ClientRpc]
     private void SpawnExplotion_ClientRpc()
     {
-        Instantiate(explotionVFX);
+        Instantiate(explotionVFX, transform.position, Quaternion.identity);
     }
 
 }
